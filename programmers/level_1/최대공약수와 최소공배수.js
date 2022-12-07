@@ -17,3 +17,13 @@ function solution(n, m) {
 
     return findDivAndMul(findDivs(n), findDivs(m));
 }
+
+
+//--------------------------------
+// 다른 사람의 풀이 
+
+function gcdlcm(a, b) {
+    var r;
+    for (var ab = a * b; r = a % b; a = b, b = r) { }
+    return [b, ab / b];
+}
