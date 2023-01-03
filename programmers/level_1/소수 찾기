@@ -1,0 +1,39 @@
+function solution(n) {
+    var answer = 0;
+    const primeNumber = [];
+    for (let i = 2; i <= n; i++) {
+        let isPrimeNumber = true
+        primeNumber.every(num => {
+            if (i % num == 0) {
+                isPrimeNumber = false;
+                return false
+            }
+            else {
+                return true
+            }
+        })
+        if (isPrimeNumber) {
+            primeNumber.push(i)
+            answer++;
+        }
+    }
+    return answer;
+}
+
+//----------------------------------------
+
+function solution(n) {
+    let numbers = []
+    for (let a = 2; a <= n; a++) numbers.push(a)
+
+    for (let i = 0; numbers[i] < Math.sqrt(n); i++) {  // 전체배열, numbers[i] 는 소수판별 중인 수 
+        numbers = numbers.reduce((acc, item) => {
+            if (item % numbers[i] !== 0) {
+                acc.push(item)
+            }
+        }, [numbers[i]])
+
+        answer = numbers.length
+        return answer;
+    }
+}
