@@ -1,5 +1,4 @@
 function solution(a, b, n) {
-    var answer = 0;
     let totalGetCola = 0;
     let nowGetCola = 0;
     let inputCola = n;
