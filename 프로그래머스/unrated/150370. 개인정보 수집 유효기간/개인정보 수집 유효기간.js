@@ -32,7 +32,7 @@ function solution(today, terms, privacies) {
 
         // 경과했다면 파기 대상
         if (diff / 28 >= termsMap.get(term)) answer.push(i + 1)
-
     })
+    
     return answer
 }
