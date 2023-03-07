@@ -8,13 +8,13 @@ function solution(today, terms, privacies) {
     }
 
     // 오늘 날짜 숫자화
-    const todays = today.split(".").map(i => parseInt(i))
-
+    const todays = today.split(".").map(Number)
+    
     // 각 개인정보 다루기
     privacies.forEach((p, i) => {
         const diffdays = []
         const [date, term] = p.split(" ");
-        const dates = date.split(".").map(i => parseInt(i))
+        const dates = date.split(".").map(Number)
 
         // 년,월,일 뺄셈
         for (let i = 0; i < dates.length; i++) {
