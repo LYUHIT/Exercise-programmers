@@ -1,6 +1,13 @@
 function solution(n) {
-    var answer = 0;
-    for (let i = 1 ; i*(i-1)/2 < n ; i++)
-        if((n-(i*(i-1)/2))%i == 0) answer++;
-    return answer;
+    let count = 0;
+    for (let i = 1; i <= n; i++) {
+        let sum = i;
+        for (let j = i + 1; sum < n; j++) {
+            sum += j;
+        }
+        if (sum === n) {
+            count++;
+        }
+    }
+    return count;
 }
