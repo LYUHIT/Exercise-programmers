@@ -5,5 +5,11 @@ HAVING FAVORITES = (
   SELECT MAX(FAVORITES)
   FROM REST_INFO AS R2
   WHERE R2.FOOD_TYPE = R1.FOOD_TYPE
+    # R1 : REST_INFO에서 (FOOD_TYPE,FAVORITES) 로 그룹화 된 상태
+    # R2 : REST_INFO 본연의 상태
+    # 따라서, R2.FOOD_TYPE = R1.FOOD_TYPE 조건은
+    # 현재 R1에서의 튜플이 가진 FOOD_TYPE이, R2에서 FOOD_TYPE 과 일치하는 R2 튜플을 모은다.
+    # 그 튜플들의 MAX(FAVORITES)을 계산하고, 
+    # HAVING절을 통해 이 그룹에서 그 값과 같은 것만 남긴다.
 )
 ORDER BY FOOD_TYPE DESC;
