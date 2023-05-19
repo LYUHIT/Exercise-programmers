@@ -9,12 +9,10 @@ dy = [-1, 1, 0, 0]
 
 queue = deque()
 queue.append([0, 0, 1])
-# visited = [[0] * m for _ in range(n)]
-visited = 0
+visited = [[0] * m for _ in range(n)]
 
 
 def bfs():
-    global visited
     while queue:
         now = queue.popleft()
         y, x, used = now[0], now[1], now[2]
@@ -24,13 +22,8 @@ def bfs():
             for i in range(4):
                 nx = x + dx[i]
                 ny = y + dy[i]
-                if (
-                    0 <= nx < m
-                    and 0 <= ny < n
-                    and maps[ny][nx]
-                    and not visited & 1 << ny * m + nx
-                ):
-                    visited |= 1 << ny * m + nx
+                if 0 <= nx < m and 0 <= ny < n and maps[ny][nx] and not visited[ny][nx]:
+                    visited[ny][nx] = 1
                     queue.append([ny, nx, used + 1])
 
 
