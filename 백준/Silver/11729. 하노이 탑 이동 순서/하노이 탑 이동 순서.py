@@ -9,21 +9,7 @@ moving = []
 def move(n, s, e):
     global count
     if n > 1:
-        if s == 1:
-            if e == 2:
-                t = 3
-            elif e == 3:
-                t = 2
-        if s == 2:
-            if e == 1:
-                t = 3
-            elif e == 3:
-                t = 1
-        if s == 3:
-            if e == 1:
-                t = 2
-            elif e == 2:
-                t = 1
+        t = 6 - (s + e)
         move(n - 1, s, t)
         move(1, s, e)
         move(n - 1, t, e)
