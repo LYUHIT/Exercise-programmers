@@ -1,0 +1,7 @@
+
+SELECT p.product_id AS PRODUCT_ID, p.product_name AS PRODUCT_NAME, SUM(price * amount) AS TOTAL_SALES
+FROM FOOD_PRODUCT AS p
+    INNER JOIN FOOD_ORDER AS o ON p.product_id = o.product_id
+WHERE DATE_FORMAT(o.produce_date, '%Y-%c') = '2022-5'
+GROUP BY PRODUCT_ID
+ORDER BY TOTAL_SALES DESC, PRODUCT_ID ASC
