@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 N = int(input().strip())
 flowers = [list(map(int, input().split())) for _ in range(N)]
-flowers.sort(key=lambda x: (x[0], x[1], x[2], x[3]))
+flowers.sort(key=lambda x: (x[0], x[1]))
 
 
 def next(start, before):
